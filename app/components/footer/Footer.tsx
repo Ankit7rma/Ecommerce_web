@@ -18,7 +18,7 @@ const Footer = () => {
                         <Link href='#'>Phones</Link>
                         <Link href='#'>Laptops</Link>
                         <Link href='#'>Desktop</Link>
-                        <Link href='#'>TV's</Link>
+                        <Link href='#'>TVs</Link>
                         <Link href='#'>Watches</Link>
                         <Link href='#'>Accessories</Link>
                     </FooterList>
@@ -29,7 +29,7 @@ const Footer = () => {
                         <Link href='#'>Contact Us</Link>
                         <Link href='#'>Shipping Policy</Link>
                         <Link href='#'>Returns & Exchanges</Link>
-                        <Link href='#'>FAQ's</Link>
+                        <Link href='#'>FAQs</Link>
                         <Link href='#'>Reviews</Link>
                         
                     </FooterList>
@@ -37,7 +37,7 @@ const Footer = () => {
                         <h3 className="text-base font-bold mb-2">
                             About Us
                         </h3>
-                        <p className="mb-4">At our Electronic store, we are dedicated to providing the latest and greatest devices and accessories to our customers, with a wide selection of phones, TV's , Laptops, Watches and Accessories.</p>
+                        <p className="mb-4">At our Electronic store, we are dedicated to providing the latest and greatest devices and accessories to our customers, with a wide selection of phones, Tvs , Laptops, Watches and Accessories.</p>
                         <p>&copy;{new Date().getFullYear()} E-Shop, All rights reserved</p>
                         
                     </div>

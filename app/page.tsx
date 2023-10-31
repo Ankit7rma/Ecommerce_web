@@ -1,8 +1,9 @@
+import HomeBanner from "./components/HomeBanner";
 
 export default function Home() {
   return (
-    <>
-    Hello Ankit 
-    </> 
+    <div>
+      <HomeBanner/>
+    </div> 
   )
 }
