@@ -1,12 +1,17 @@
 import formatePrice from "@/utils/formatePrice";
 import { truncateText } from "@/utils/truncateText";
 import Image from "next/image";
+import Rating from '@mui/material/Rating';
 
 interface ProductCardProps{
     data:any
 }
 
 const ProductCard:React.FC<ProductCardProps> = ({data}) => {
+    const productRating =
+     data.reviews.reduce((acc:number,item:any)=>item.rating + acc,0)/data.reviews.length
+        
+    
     return ( 
         <div className="col-span-1
         cursor-pointer
@@ -19,15 +24,15 @@ const ProductCard:React.FC<ProductCardProps> = ({data}) => {
         text-center
         text-sm
         ">
-            <div className="flex flex-col items-center w-full gap-1">
+            <div className="flex flex-col items-center w-full">
                 <div className="aspect-square overflow-hidden relative w-full" >
-                    <Image src={data.images[0].image} fill alt="Product-Image"
+                    <Image src={data.images[0].image} fill alt={data.name}
                     className="object-contain w-full h-full" />
                 </div>
-                <div>{truncateText(data.name)}</div>
-                <div></div>
-                <div></div>
-                <div>{formatePrice(data.price)}</div>
+                <div className="mt-4 text-xs">{truncateText(data.name)}</div>
+                <div><Rating value={productRating} readOnly/></div>
+                <div>{data.reviews.length} reviews</div>
+                <div className="font-semibold">{formatePrice(data.price)}</div>
             </div>
         </div>
      );

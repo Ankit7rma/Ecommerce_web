@@ -10,7 +10,9 @@ const Navbar = () => {
         top-0
         w-full
         bg-slate-300
-        shadow-lg"
+        shadow-md
+        z-10
+        "
         >
             <div className="py-4 border-b-[1px]">
             <Container >

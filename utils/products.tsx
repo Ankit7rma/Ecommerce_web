@@ -21,7 +21,9 @@ export const products = [
             "https://firebasestorage.googleapis.com/v0/b/ecommerce-shop-cc542.appspot.com/o/products%2F1688622165836-iphone14-gray.png?alt=media&token=58f684db-998e-43eb-aa06-efe3d6ccfad4",
         },
       ],
-      reviews: [],
+      reviews: [{
+        rating:1,
+      }],
     },
     {
       id: "64a4ebe300900d44bb50628a",
