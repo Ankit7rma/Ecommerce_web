@@ -6,6 +6,7 @@ import Image from "next/image";
 import Rating from '@mui/material/Rating';
 import { useRouter } from "next/navigation";
 
+
 interface ProductCardProps{
     data:any
 }
