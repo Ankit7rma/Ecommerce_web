@@ -20,7 +20,7 @@ const SetColor: React.FC<SetColorProps> = ({
     <div>
       <div className="flex gap-4 items-center">
         <span className="font-semibold">COLOR: </span>
-        <div className="flex gap-2">{images.map((image,index)=>{
+        <div className="flex gap-2">{images.map((image)=>{
             return (<div key={image.color}
                 onClick={()=>handleColorSelect(image)}
                 className={
