@@ -1,6 +1,5 @@
 "use client";
 
-
 import SetColor from "@/app/components/products/SetColor";
 import SetQuantity from "@/app/components/products/SetQuantity";
 import { Rating } from "@mui/material";
@@ -25,7 +24,7 @@ export type SelectedImgType = {
   image: string;
 };
 const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
-  "useStrict"
+  "useStrict";
   const [cartProduct, setCartProduct] = useState<CartProductType>({
     id: product.id,
     name: product.name,
@@ -50,24 +49,24 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
         return { ...prev, selectedImg: value };
       });
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [cartProduct.selectedImg]
   );
 
   const handleQtyDecrease = useCallback(() => {
-    if (cartProduct.quantity===1)return null
-    setCartProduct((prev) => {
+    if (cartProduct.quantity === 1) return null;
+    setCartProduct((prev:any) => {
       return { ...prev, quantity: prev.quantity - 1 };
     });
   }, [cartProduct]);
   const handleQtyIncrease = useCallback(() => {
-    if (cartProduct.quantity===20)return null
+    if (cartProduct.quantity === 20) return null;
 
-    setCartProduct((prev) => {
+    setCartProduct((prev:any) => {
       return { ...prev, quantity: prev.quantity + 1 };
     });
   }, [cartProduct]);
   return (
-    
     <div className="grid grid-cols-1 md:grid-cols-2">
       <div>Images</div>
       <div className="flex flex-col gap-1">
