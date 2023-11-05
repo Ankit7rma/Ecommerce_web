@@ -24,7 +24,7 @@ const ProduImage:React.FC<ProductImageProps> = ({
             <Image
             fill
             src={cartProduct.selectedImg.image}
-            alt={cartProduct.name}
+            alt={`${cartProduct.name}`}
             className="w-full h-full object-contain max-h-[500px] min-h-[300px] sm:min-h-[400px]" 
 
             />
