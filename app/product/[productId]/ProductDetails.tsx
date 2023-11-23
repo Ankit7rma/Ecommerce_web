@@ -54,8 +54,8 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
     }
   }, [cartProducts]);
   const router = useRouter();
-  console.log(isProductInCart);
-  console.log(cartProducts);
+  // console.log(isProductInCart);
+  // console.log(cartProducts);
 
   const Horizontal = () => {
     return <hr className="w-[30%] my-2" />;
