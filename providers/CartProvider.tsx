@@ -1,3 +1,5 @@
+"use client";
+
 import { CartContextProvider } from "@/hooks/useCart";
 import React from "react";
 

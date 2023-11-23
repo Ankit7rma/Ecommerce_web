@@ -4,6 +4,7 @@ import Button from "@/app/components/Button";
 import ProduImage from "@/app/components/products/ProductImage";
 import SetColor from "@/app/components/products/SetColor";
 import SetQuantity from "@/app/components/products/SetQuantity";
+import { useCart } from "@/hooks/useCart";
 import { Rating } from "@mui/material";
 import { useCallback, useState } from "react";
 
@@ -26,7 +27,7 @@ export type SelectedImgType = {
   image: string;
 };
 const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
-  "useStrict";
+  const { handleAddProductToCart, cartProducts } = useCart();
   const [cartProduct, setCartProduct] = useState<CartProductType>({
     id: product.id,
     name: product.name,
@@ -37,7 +38,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
     quantity: 1,
     price: product.price,
   });
-
+  console.log(cartProducts);
   const Horizontal = () => {
     return <hr className="w-[30%] my-2" />;
   };
@@ -57,22 +58,24 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
 
   const handleQtyDecrease = useCallback(() => {
     if (cartProduct.quantity === 1) return null;
-    setCartProduct((prev:any) => {
+    setCartProduct((prev: any) => {
       return { ...prev, quantity: prev.quantity - 1 };
     });
   }, [cartProduct]);
   const handleQtyIncrease = useCallback(() => {
     if (cartProduct.quantity === 20) return null;
 
-    setCartProduct((prev:any) => {
+    setCartProduct((prev: any) => {
       return { ...prev, quantity: prev.quantity + 1 };
     });
   }, [cartProduct]);
   return (
     <div className="grid grid-cols-1 md:grid-cols-2">
-      <ProduImage cartProduct={cartProduct}
-      product={product}
-      handleColorSelect={handleColorSelect}/>
+      <ProduImage
+        cartProduct={cartProduct}
+        product={product}
+        handleColorSelect={handleColorSelect}
+      />
       <div className="flex flex-col gap-1">
         <h2 className="text-3xl font-medium">{product.name}</h2>
         <div className="flex items-center gap-2">
@@ -108,7 +111,10 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
         />
         <Horizontal />
         <div className="max-w-[300px]">
-          <Button label="Add To Cart" onClick={()=>{}}/>
+          <Button
+            label="Add To Cart"
+            onClick={() => handleAddProductToCart(cartProduct)}
+          />
         </div>
       </div>
     </div>
